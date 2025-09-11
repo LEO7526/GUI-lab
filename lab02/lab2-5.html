@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Filter Programming Languages</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("#filter").on("keyup", function() {
+        var phrase = $(this).val().toLowerCase();
+        $("table tbody tr").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().includes(phrase));
+        });
+      });
+    });
+  </script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    input[type="text"] {
+      margin-bottom: 10px;
+      padding: 5px;
+      width: 200px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 60%;
+    }
+    th, td {
+      border: 1px solid #999;
+      padding: 8px 12px;
+      text-align: left;
+    }
+    th {
+      background-color: #333;
+      color: white;
+    }
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+
+  <label for="filter">Filter:</label>
+  <input type="text" id="filter" placeholder="Type to search...">
+
+  <table>
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>Language</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>012</td><td>C#</td><td>7500</td></tr>
+      <tr><td>012</td><td>Java</td><td>7000</td></tr>
+      <tr><td>013</td><td>C</td><td>6000</td></tr>
+      <tr><td>013</td><td>C++</td><td>6000</td></tr>
+      <tr><td>125</td><td>PHP</td><td>5000</td></tr>
+      <tr><td>126</td><td>jQuery</td><td>9000</td></tr>
+      <tr><td>157</td><td>HTML5</td><td>8000</td></tr>
+      <tr><td>158</td><td>VBasic</td><td>6500</td></tr>
+    </tbody>
+  </table>
+</body>
+</html>

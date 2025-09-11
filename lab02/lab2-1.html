@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("#loginbtn").click(function() {
+        var username = $("#username").val().trim();
+        if (username !== "") {
+          $("#welcome-message").text("You have logged in successfully, " + username);
+          alert("Welcome " + username);
+        } else {
+          $("#welcome-message").text("");
+          alert("Please enter a username.");
+        }
+      });
+
+      $("#resetbtn").click(function() {
+        $("#username").val("");
+        $("#welcome-message").text("");
+      });
+    });
+  </script>
+
+</head>
+<body>
+  <div class="login-container">
+    <h2><strong>ABC Company Ltd.</strong></h2>
+    <label for="username">Username:</label><br>
+    <input type="text" id="username" name="username"><br>
+    <button class="login-btn" id="loginbtn">Login</button>
+    <button class="reset-btn" id="resetbtn">Reset</button>
+    <div id="welcome-message"></div>
+  </div>
+</body>
+</html>

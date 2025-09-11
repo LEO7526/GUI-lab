@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("button").click(function() {
+        $(this).text("X");
+        $(this).addClass("cross");
+
+      });
+
+      $("button").dblclick(function() {
+        $(this).text("O");
+        $(this).addClass("circle");
+
+      });
+    });
+  </script>
+
+  <style>
+    table {
+      margin: 20px auto;
+      border-collapse: separate;
+    }
+
+    td {
+      width: 60px;
+      height: 60px;
+      text-align: center;
+    }
+
+    button {
+      width: 100%;
+      height: 100%;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .cross {
+      background-color: red;
+    }
+
+    .circle {
+      background-color: green;
+    }
+  </style>
+
+</head>
+
+<body>
+  <h2>Tic-Tac-Toe</h2>
+  <div class="container">
+    <table border="1">
+      <tr>
+        <td>
+          <button></button>
+        </td>
+        <td>
+          <button></button>
+        </td>
+        <td>
+          <button></button>
+        </td>
+
+      </tr>
+      <tr>
+        <td>
+          <button></button>
+        </td>
+        <td>
+          <button></button>
+        </td>
+        <td>
+          <button></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button></button>
+        </td>
+        <td>
+          <button></button>
+        </td>
+        <td>
+          <button></button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
+
+</html>

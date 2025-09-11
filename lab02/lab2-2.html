@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flower Photo</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("#orangebtn").click(function() {
+        $("#myimg").attr("src", "photo1.jpg");
+      });
+
+      $("#yellowbtn").click(function() {
+        $("#myimg").attr("src", "photo2.jpg");
+      });
+    });
+  </script>
+  <style>
+    .container {
+      text-align: left;
+      margin-top: 50px;
+    }
+    .image-container img {
+      width: 300px;
+      height: auto;
+      margin-top: 20px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2><strong>Flower Photo</strong></h2>
+    <button class="orange-btn" id="orangebtn">Orange</button>
+    <button class="yellow-btn" id="yellowbtn">Yellow</button>
+    <div class="image-container">
+      <img src="" alt="sample image" id="myimg">
+    </div>
+  </div>
+</body>
+</html>
