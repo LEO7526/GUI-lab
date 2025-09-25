@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Records Loader</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function () {
+      $("#driver").click(function () {
+        $.getJSON('lib/studentRecord.json', function (jd) {
+          // Clear previous content
+          $('#stage').empty();
+
+          // Add headings
+          $('#stage').append('Stud_ID\tName\t\tLastName\tAge\tSex\n');
+
+          // Loop through all student records
+          for (let i = 0; i < jd.length; i++) {
+            let line = jd[i].Stud_ID + '\t' +
+                       jd[i].Name + '\t\t' +
+                       jd[i].LastName + '\t\t' +
+                       jd[i].Age + '\t' +
+                       jd[i].Sex + '\n';
+            $('#stage').append(line);
+          }
+        });
+      });
+    });
+  </script>
+
+</head>
+
+<body>
+  <p>Click on the button to load students' records:</p>
+  <pre>
+  <div id="stage" style="background-color:pink;">
+          STAGE
+  </div>
+  </pre>
+  <input type="button" id="driver" value="Load Data" />
+</body>
+
+</html>

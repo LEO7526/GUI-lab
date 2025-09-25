@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Records Loader</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function () {
+      $("#driver").click(function () {
+        $.getJSON('lib/studentRecord.json', function (jd) {
+          // Clear previous content
+          $('#stage').empty();
+
+          // Start table
+          let table = '<table border="1" style="width:100%; border-collapse:collapse;">';
+          table += '<tr style="background-color:lightgreen;">';
+          table += '<th>Stud_ID</th><th>Name</th><th>LastName</th><th>Age</th><th>Sex</th>';
+          table += '</tr>';
+
+          // Add student rows
+          for (let i = 0; i < jd.length; i++) {
+            table += '<tr style="background-color:pink;">';
+            table += '<td>' + jd[i].Stud_ID + '</td>';
+            table += '<td>' + jd[i].Name + '</td>';
+            table += '<td>' + jd[i].LastName + '</td>';
+            table += '<td>' + jd[i].Age + '</td>';
+            table += '<td>' + jd[i].Sex + '</td>';
+            table += '</tr>';
+          }
+
+          table += '</table>';
+
+          // Append table to stage
+          $('#stage').append(table);
+        });
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <p>Click on the button to load students' records:</p>
+  <pre>
+  <div id="stage" style="background-color:pink;">
+          STAGE
+  </div>
+  </pre>
+  <input type="button" id="driver" value="Load Data" />
+</body>
+
+</html>

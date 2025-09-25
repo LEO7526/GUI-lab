@@ -1,0 +1,16 @@
+{
+    "name": [
+        "Alice Johnson",
+        "Bob Smith",
+        "Catherine Lee",
+        "David Brown",
+        "Evelyn Clark",
+        "Frank Wilson",
+        "Grace Miller",
+        "Henry Martinez",
+        "Isabella Anderson",
+        "Jack Thompson"
+    ],
+    "age": [28, 34, 23, 41, 29, 37, 26, 45, 31, 39],
+    "sex": ["Female", "Male", "Female", "Male", "Female", "Male", "Female", "Male", "Female", "Male"]
+}

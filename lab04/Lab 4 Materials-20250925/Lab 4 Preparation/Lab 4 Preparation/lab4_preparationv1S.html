@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Load User Information and JSON Data</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    
+    .content-box {
+      width: 300px;
+      min-height: 200px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+      margin: 10px;
+      position: relative;
+    }
+    
+    #userInfo {
+      background-color: lightblue;
+    }
+    
+    #userComments {
+      background-color: lightgreen;
+    }
+    
+    #jsonData,
+    #jsonData_for {
+      background-color: lightcoral;
+    }
+    
+    .remark {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 5px;
+      border-radius: 5px;
+      font-size: 12px;
+      color: #666;
+    }
+    
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      background: linear-gradient(to bottom, #e0e0e0, #b0b0b0);
+      color: #333;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      transition: background 0.3s;
+    }
+    
+    button:hover {
+      background: linear-gradient(to bottom, #d0d0d0, #a0a0a0);
+    }
+    
+    .button-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+  <script type="text/javascript">
+    $(document).ready(function() {
+
+      // load all 
+
+      $("#loadButton").click(function(event) {
+
+        //green 
+        $('#userComments').load('jslib/userComments.html', function() {
+          $('#userComments').append("<div class ='remark'>Loaded from userComments.html</div>");
+        });
+
+
+        //blue
+        $('#userInfo').load('jslib/userInfo.html', function() {
+          $('#userInfo').append("<div class ='remark'>Loaded from userInfo.html</div>");
+        });
+
+
+        //json data
+
+        $.getJSON('jslib/userData_array.json', function(jd) {
+          $('#jsonData').html('<h3> User Data</h3>');
+          $('#jsonData').append('<p> Name: ' + jd.name[1] + '</p>');
+          $('#jsonData').append('<p>Age : ' + jd.age[1] + '</p>');
+          $('#jsonData').append('<p> Sex: ' + jd.sex[1] + '</p>');
+          $('#jsonData').append("<div class ='remark'>Loaded from userData_array.json</div>");
+        });
+
+      });
+
+      //load button for 
+      $("#loadButton_for").click(function() {
+
+        $.getJSON('jslib/userData.json', function(jd) {
+          $('#jsonData_for').html('<h3> User Data</h3>');
+
+          for (let i = 0; i < jd.length; i++) {
+            $('#jsonData_for').append('<p>Name: ' + jd[i].name + '</p>');
+            $('#jsonData_for').append('<p>Age: ' + jd[i].age + '</p>');
+            $('#jsonData_for').append('<p>Sex: ' + jd[i].sex + '</p>');
+            $('#jsonData_for').append('<hr>');
+          }
+
+          $('#jsonData_for').append("<div class ='remark'>Loaded from userData.json</div>");
+
+
+        });
+
+      });
+
+      //reset
+      $("#loadButton_for_clear").click(function() {
+        $("#jsonData_for").html("all json data will load here(For loop).");
+
+      });
+
+
+
+
+    });
+  </script>
+</head>
+
+<body>
+  <h1>User Information and Data Loader</h1>
+  <h4>Click the button to load user information, comments, and JSON data:</h4>
+  <table>
+    <tr>
+      <td>
+        <div id="userInfo" class="content-box">
+          User Information will load here.
+          <div class="remark">Loading...</div>
+        </div>
+      </td>
+      <td>
+        <div id="userComments" class="content-box">
+          User Comments will load here.
+          <div class="remark">Loading...</div>
+        </div>
+      </td>
+      <td>
+        <div id="jsonData" class="content-box">
+          JSON Data will load here.
+          <div class="remark">Loading...</div>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <div class="button-container">
+    <button id="loadButton">Load All Data</button>
+  </div>
+
+  <hr />
+
+  <h1>Load data from JSON file by For loop</h1>
+  <div class="button-container">
+    <button id="loadButton_for_clear">Clear All Data</button>
+    <button id="loadButton_for">Load All Data</button>
+  </div>
+
+  <div id="jsonData_for" class="content-box">
+    All JSON Data will load here (For Loop).
+    <div class="remark">Loading...</div>
+  </div>
+
+  <hr />
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+[
+  {
+    "Stud_ID": "1111",
+    "Name": "Mary",
+    "LastName": "Chan",
+    "Age": 22,
+    "Sex": "female"
+  },
+  {
+    "Stud_ID": "2222",
+    "Name": "Peter",
+    "LastName": "Wong",
+    "Age": 21,
+    "Sex": "male"
+  },
+  {
+    "Stud_ID": "3333",
+    "Name": "David",
+    "LastName": "Cheung",
+    "Age": 19,
+    "Sex": "male"
+  },
+  {
+    "Stud_ID": "4444",
+    "Name": "John",
+    "LastName": "Leung",
+    "Age": 20,
+    "Sex": "male"
+  }
+]

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function() {
+
+      $("#loadButton").click(function(event) {
+
+        $.getJSON('lib/userData_array.json', function(jd) {
+          $('#pink').append('<p> Name: ' + jd.name[1] + '</p>');
+          $('#pink').append('<p>Age : ' + jd.age[1] + '</p>');
+          $('#pink').append('<p> Sex: ' + jd.sex[1] + '</p>');
+        });
+
+      });
+
+    });
+  </script>
+
+  <style>
+    #yellow {
+      background-color: yellow;
+    }
+
+    #pink {
+      background-color: pink;
+    }
+  </style>
+</head>
+
+<body>
+  <p>Click on the button to load the record:</p>
+  <div id="pink" class="content-box">
+  </div>
+
+  <button id="loadButton">Load Data</button>
+</body>
+
+</html>

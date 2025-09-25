@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Record Display</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function () {
+      $("#driver").click(function () {
+        $.getJSON('lib/birthday.json', function (data) {
+          $('#stage').empty();
+
+          let output = '';
+          for (let i = 0; i < data.name.length; i++) {
+            output += 'Name: ' + data.name[i] + '\n\n';
+            output += 'Day: ' + data.birthday[i].day + '\n\n';
+            output += 'Month: ' + data.birthday[i].month + '\n\n';
+            output += 'Year: ' + data.birthday[i].year + '\n\n';
+            output += 'Sex: ' + data.sex[i] + '\n\n\n';
+          }
+
+          $('#stage').text(output);
+        });
+      });
+    });
+  </script>
+  <style>
+    #stage {
+      background-color: pink;
+      padding: 10px;
+      font-family: Arial, sans-serif;
+      white-space: pre-line;
+    }
+  </style>
+</head>
+<body>
+  <p>Click on the button to load the record:</p>
+  <div id="stage">STAGE</div>
+  <input type="button" id="driver" value="Load Data" />
+</body>
+</html>
