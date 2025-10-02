@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="jslib/jquery-ui.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      $("#btn1").click(function() {
+        $("#box").animate(
+          { top: "+=100px",left: "+=250px", width: "150px", height: "150px" },
+          1500,
+          "swing"
+        ).animate(
+          { width: "150px", height: "150px", left: "10px", top: "100px" },
+          1500,
+          "linear"
+        );
+      });
+      
+      
+      $("#btn2").click(function() {
+        $("#box").effect("shake",2000);
+      });
+      
+      $("#btn3").click(function() {
+        $("#box").effect("fold",2000);
+      });
+      
+      $("#btn4").click(function() {
+        $("#box").effect("explode",3000);
+      });
+      
+      
+    });
+  </script>
+</head>
+<body>
+  <button id="btn1">Moving</button>
+  <button id="btn2">Shake</button>
+  <button id="btn3">Fold</button>
+  <button id="btn4">Explode</button>
+  <p>Moving the square!</p>
+  <div id="box" style="background:green;
+         left:10px; top:100px; 
+         height:100px;width:100px;
+         position:absolute;"> 
+  </div>
+</body>
+</html>

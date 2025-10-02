@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery Effects 1</title>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="jslib/jquery-ui_v2.js"></script>
+  <script type="text/javascript">
+    $(function() {
+
+      $("#btn_showNhide").click(function() {
+        $("#div1").show(1000).hide(1000);
+      });
+
+      $("#btn_toggle").click(function() {
+        $("#div2").toggle(2000);
+      });
+      
+      $("#btn_fade").click(function() {
+        $("#div3_1").fadeOut(1000);
+        $("#div3_2").fadeOut(2000);
+        $("#div3_3").fadeOut(3000);
+      });
+      
+      $("#btn_fade").dblclick(function() {
+        $("#div3_1").fadeIn(1000);
+        $("#div3_2").fadeIn(2000);
+        $("#div3_3").fadeIn(3000);
+      });
+      
+      $("#btn_slide").click(function() {
+        
+        if($("#content").is(":visible")){
+          $("#content").slideUp(2000,function(){
+            alert("Content is now hidden!");
+          });
+        }else{
+           $("#content").slideDown(400,function(){
+            alert("Content is now visible!");
+          });
+        }
+        
+      });
+      
+      
+      $("#btn_relative").click(function() {
+        $("#box").animate({left :"+=100px"},1000,function(){
+          updateStatus();
+        });
+
+      });
+      
+      $("#btn_absolute").click(function() {
+        $("#box").animate({left :"0px"},1000,function(){
+          updateStatus();
+        });
+
+      });
+      
+      
+
+      function updateStatus() {
+        var currentLeft = $("#box").css("left");
+        $("#status").text("Current Position: " + currentLeft);
+      }
+
+      updateStatus();
+      
+      
+      
+      
+      $("#btn_dimensionVisibility").click(function() {
+        $("#box2").animate({width:"150px",height:"50px",opacity:"0"},6000,"swing")
+        .animate({width:"100px",height:"100px",opacity:"1"},6000,"linear")
+
+      });
+      
+      
+
+    });
+  </script>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      background-color: #f0f0f0;
+      /* Light grey background */
+      font-family: Arial, sans-serif;
+    }
+    
+    h1 {
+      text-align: center;
+      width: 100%;
+      margin-bottom: 20px;
+      color: #fff;
+      /* White text for contrast */
+      background-color: #4A90E2;
+      /* New background color for the header */
+      padding: 10px;
+      border-radius: 5px;
+    }
+    
+    .container {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1200px;
+      /* Limit the width for better layout */
+    }
+    
+    .column {
+      width: 45%;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+    
+    .left-column {
+      background-color: #96e8538e;
+      /* Complementary orange */
+      color: rgb(0, 0, 0);
+      /* White text for readability */
+    }
+    
+    .right-column {
+      background-color: #2196f3;
+      /* Complementary blue */
+      color: white;
+      /* White text for readability */
+    }
+    
+    .div0 {
+      height: 100px;
+      background-color: rgba(39, 213, 33, 0.8);
+      /* More opaque background */
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      /* Slightly rounded corners */
+      border: 2px solid #fff;
+      /* White border for contrast */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      /* Subtle shadow for depth */
+    }
+    
+    #div1 {
+      display: none;
+      width: 100px;
+      height: 100px;
+      border: solid 2px #fff;
+      /* Thicker border */
+      background-color: rgba(6, 57, 23, 0.8)/* More opaque background */
+    }
+    
+    .div3 {
+      display: inline-block;
+      width: 80px;
+      height: 80px;
+      padding: 10px;
+      margin-right: 15px;
+      border: solid 2px #ebf794;
+      /* Thicker border */
+      background-color: rgba(235, 230, 172, 0.8);
+      /* More opaque background */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      /* Subtle shadow for depth */
+    }
+    
+    #content {
+      display: none;
+      width: 300px;
+      height: 60px;
+      background-color: rgba(235, 230, 172, 0.8);
+      /* More opaque background */
+      border: 2px solid #fff;
+      /* Thicker border */
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+    }
+    
+    #box,
+    #box2 {
+      width: 100px;
+      height: 100px;
+      background-color: rgba(207, 242, 66, 0.8);
+      /* More opaque background */
+      position: relative;
+      margin: 20px;
+      border: 2px solid #fff;
+      /* Thicker border */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      /* Subtle shadow for depth */
+    }
+    
+    #status {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #333;
+      /* Dark grey */
+    }
+    /* Stylish horizontal line */
+    
+    .separator {
+      width: 100%;
+      height: 2px;
+      background-color: #ccc;
+      /* Light grey color */
+      margin: 20px 0;
+      /* Spacing above and below the line */
+      border-radius: 1px;
+      /* Slightly rounded edges */
+    }
+    /* Metallic button styles */
+    
+    input[type="button"],
+    button {
+      background: linear-gradient(90deg, #ccc, #fff);
+      /* Metallic gradient */
+      border: 1px solid #aaa;
+      /* Darker border */
+      color: #333;
+      /* Dark text for contrast */
+      padding: 10px 15px;
+      border-radius: 5px;
+      /* Rounded corners */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      /* Subtle shadow */
+      cursor: pointer;
+      /* Pointer cursor on hover */
+      transition: background 0.3s, box-shadow 0.3s;
+      /* Smooth transition */
+      margin: 10px 0;
+      /* Margin between buttons and divs */
+    }
+    
+    input[type="button"]:hover,
+    button:hover {
+      background: linear-gradient(90deg, #fff, #e0e0e0);
+      /* Lighter metallic on hover */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      /* Slightly darker shadow on hover */
+    }
+  </style>
+</head>
+
+<body>
+  <h1>jQuery Effects</h1>
+  <div class="container">
+    <div class="column left-column">
+      <h3>Show and Hide the object</h3>
+      <input id="btn_showNhide" type="button" value="Show and Hide" />
+      <div class="div0">
+        <div id="div1"></div>
+      </div>
+
+      <div class="separator"></div>
+
+      <h3>Toggle the menu</h3>
+      <input id="btn_toggle" type="button" value="Toggle" />
+      <div class="div0">
+        <div id="div2">
+          <ol>
+            <li>Point 1</li>
+            <li>Point 2</li>
+            <li>Point 3</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="separator"></div>
+
+      <h3>Slide Up and Slide Down Example</h3>
+      <button id="btn_slide">Toggle Content</button>
+      <div class="div0">
+        <div id="content">This is the collapsible content!</div>
+      </div>
+
+      <div class="separator"></div>
+
+      <h3>Fade In and Out</h3>
+      <input id="btn_fade" type="button" value="Fade In and Out" />
+      <div class="div0">
+        <div class="div3" id="div3_1"></div>
+        <div class="div3" id="div3_2"></div>
+        <div class="div3" id="div3_3"></div>
+      </div>
+    </div>
+
+    <div class="column right-column">
+      <h3>jQuery Animate Example: Positioning</h3>
+      <button id="btn_absolute">Move to left: 0px</button>
+      <button id="btn_relative">Move right by +=100px</button>
+      <div id="box"></div>
+
+      <div id="status">Current Position: left: 100px</div>
+
+      <div class="separator"></div>
+
+      <h3>jQuery Animate Example: Dimensions and Visibility</h3>
+      <button id="btn_dimensionVisibility">Dimensions and Visibility</button>
+      <div id="box2"></div>
+
+    </div>
+  </div>
+</body>
+
+</html>

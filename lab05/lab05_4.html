@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      $("#startBtn").click(function() {
+        $("#box").animate(
+          { left: "+=250px", width: "150px", height: "150px", opacity: "0" },
+          2000,
+          "swing"
+        ).animate(
+          { width: "50px", height: "50px", left: "10px", top: "100px", opacity: "1" },
+          3000,
+          "linear"
+        );
+      });
+    });
+  </script>
+</head>
+<body>
+  <button id="startBtn">Start Animation</button>
+  <p>Moving the square!</p>
+  <div id="box" style="background:green;
+         left:10px; top:100px; 
+         height:100px;width:100px;
+         position:absolute;"> 
+  </div>
+</body>
+</html>
