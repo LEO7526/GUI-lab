@@ -1,0 +1,57 @@
+<html>
+
+<body>
+  <canvas id="myCanvas" width="400" height="200" style="border:1px solid #d3d3d3;">
+    Your browser does not support the HTML5 canvas tag.</canvas>
+  <script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    
+    ctx.fillStyle = "yellow";
+    ctx.strokeStyle = "white";
+    ctx.lineWidth = 3;
+    ctx.fillRect(0,0,400,200);
+    
+    var centerX = 0;
+    var centerY = 100;
+    var radius = 100;
+    
+    ctx.beginPath();
+    ctx.lineTo(centerX,centerY);
+    ctx.arc(centerX,centerY,radius,0,0.5 * Math.PI)
+    ctx.lineTo(centerX,centerY);
+    ctx.arc(centerX,centerY,radius,1.5* Math.PI,0)
+    ctx.lineTo(centerX,centerY);
+    ctx.fillStyle = "red";
+    ctx.fill();
+    
+    
+    
+    
+    var centerX = 200;
+    var centerY = 100;
+    var radius = 100;
+    
+    ctx.beginPath();
+    ctx.lineTo(centerX,centerY);
+    ctx.arc(centerX,centerY,radius,0.5* Math.PI,1.5 * Math.PI)
+    ctx.lineTo(centerX,centerY);
+    ctx.fillStyle = "red";
+    ctx.fill();
+    
+    
+    
+    var centerX = 300;
+    var centerY = 100;
+    var radius = 100;
+    
+    ctx.beginPath();
+    ctx.lineTo(centerX,centerY);
+    ctx.arc(centerX,centerY,radius,0,1* Math.PI)
+    ctx.lineTo(centerX,centerY);
+    ctx.fillStyle = "red";
+    ctx.fill();
+  </script>
+</body>
+
+</html>

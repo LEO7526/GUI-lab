@@ -1,0 +1,62 @@
+<html>
+
+<body>
+ <img src="logo_vtc.jpg" alt="" id="vtclogo" width="100" height="50">
+  <canvas id="myCanvas" width="1500" height="800" style="border:1px solid #d3d3d3;">
+    Your browser does not support the HTML5 canvas tag.</canvas>
+  <script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+
+    ctx.font = "72px Arial";
+    ctx.fillStyle = "blue";
+    ctx.strokeStyle = "white";
+    ctx.lineWidth = 3;
+    ctx.fillText ("Hello, Canvas!",500,80);
+    ctx.strokeText ("Hello, Canvas!",500,80);
+    
+    
+    ctx.font = "72px Arial";
+    ctx.strokeStyle = "red";
+    ctx.lineWidth = 3;
+    ctx.strokeText ("Hello, Canvas!",500,180);
+    
+    
+    ctx.beginPath();
+    ctx.fillStyle = "blue";
+    ctx.fillRect(10,10,250,150);
+    
+    ctx.strokeStyle = "green";
+    ctx.lineWidth = 3;
+    ctx.strokeRect(10,160,250,150);
+    
+    ctx.beginPath();
+    ctx.arc(60, 75, 50, 0, 2 * Math.PI);
+    ctx.fillStyle = "green";
+    ctx.fill();
+    ctx.strokeStyle = "white";
+    ctx.lineWidth = 5 ;
+    ctx.stroke();
+    
+    
+    var centerX = 100;
+    var centerY = 300;
+    var radius = 100;
+    
+    ctx.beginPath();
+    ctx.lineTo(centerX,centerY);
+    ctx.arc(centerX,centerY,radius,1* Math.PI,1.5 * Math.PI)
+    ctx.lineTo(centerX,centerY);
+    ctx.fillStyle = "orange";
+    ctx.fill();
+    
+    
+    
+    window.onload = function(){
+      var img = document.getElementById("vtclogo");
+      ctx.drawImage(img,500,500,180,150);
+    }
+  </script>
+</body>
+
+</html>
