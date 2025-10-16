@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="formContainer">
+    <form id="simpleForm">
+      <label for="hkid">HKID No:</label>
+      <input type="text" id="id_no" name="id_no" pattern="[A-Z]{1}[0-9]{5}" title="Format: A123456 (1 uppercase letter followed by 6 digits)" maxlength="6" size="6" required>
+
+
+      <label for="">(</label>
+
+      <input type="text" id="id_no" name="id_no" pattern="[a-z0-9]{1}" title="Format: A123456 (1 uppercase letter followed by 6 digits)" maxlength="1" size="1" required>
+      <label for="">)</label>
+
+      <div>
+        <br>
+        <!-- Submit Button -->
+        <input type="submit" value="Submit">
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>

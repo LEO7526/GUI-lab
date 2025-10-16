@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f8f9fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    
+    .form-container {
+      margin-top: 20px;
+      margin-bottom: 100px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+    
+    fieldset {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+    
+    legend {
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #ffffff;
+      background-color: #007bff;
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 15px;
+      text-align: left;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    input[type="date"],
+    input[type="range"],
+    select {
+      width: calc(100% - 16px);
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    
+    select {
+      width: calc(100% - 0px);
+    }
+    
+    .income-container {
+      margin-bottom: 15px;
+    }
+    
+    .income-value {
+      text-align: center;
+      display: block;
+      margin: 0px 0;
+    }
+    
+    .checkbox-option,
+    .payment-option {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    
+    input[type="checkbox"],
+    input[type="radio"] {
+      margin-left: 10px;
+    }
+    
+    input[type="submit"] {
+      background-color: #007bff;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+    
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="form-container">
+    <form id="simpleForm" oninput="output.value = '$' + income.value">
+      <fieldset>
+        <legend>Personal Information</legend>
+        <label for="name">Name:</label>
+        <input type="text" name="name" placeholder="Chan Tai Man" required>
+
+        <label for="email">Email Address:</label>
+        <input type="email" name="email" title="Enter a valid email address (e.g., user@example.com)" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="chantaiman@gmail.com">
+
+        <label for="date">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required min="2025-10-01" max="2025-10-05">
+
+        <label for="childNo">Number of children</label>
+        <input type="number" id="childNo" name="quantity" min="0" max="100">
+
+        <label for="id_no">ID Number:</label>
+        <input type="text" id="id_no" name="id_no" pattern="[A-Z]{1}[0-9]{6}" title="Format: A123456 (1 uppercase letter followed by 6 digits)" maxlength="7" size="7" required>
+
+        <div class="income-container">
+          <label for="income">Income:</label>
+          <input type="range" id="income" name="income" min="0" max="100000" value="0">
+          <output id="output" class="income-value">$0</output>
+        </div>
+
+        <label for="gender">Select Gender:</label>
+        <select name="gener" id="gender">
+          <option value="">--Please choose an option--</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="prefer-not-to-say">Prefer not to say</option>
+          <option value="other">Other</option>
+
+        </select>
+
+
+      </fieldset>
+
+      <fieldset>
+        <legend>Hobbies/Interests (CheckBox)</legend>
+        <div class="checkbox-option">
+          <label for="reading">Reading</label>
+          <input type="checkbox" id="reading" name="hobbies" value="Reading">
+        </div>
+        <div class="checkbox-option">
+          <label for="traveling">Traveling</label>
+          <input type="checkbox" id="traveling" name="hobbies" value="Traveling">
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Select Payment Method</legend>
+          <div class="payment-option">
+            <label for="bankTransfer">Bank Transfer</label>
+            <input type="radio" id="bankTransfer" name="paymentMethod" value="Bank Transfer">
+          </div>
+
+            <div class="payment-option">
+            <label for="bankTransfer">Crytocurrecncy</label>
+            <input type="radio" id="bankTransfer" name="paymentMethod" value="Crypto">
+          </div>
+        
+      </fieldset>
+
+      <!-- Submit Button -->
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+
+</body>
+
+</html>

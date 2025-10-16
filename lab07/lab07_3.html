@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    meter {
+      width: 300px;
+    }
+  </style>
+</head>
+
+<body>
+  <form id="simpleForm" oninput="m.value = t.value">
+    <p>The frozen food temperature is:
+      <input type="number" id="t" min="-50" max="50" step="0.5"></p>
+
+      <meter id="m" value="0" min="-50" max="50" low="0" high="30" optimum="-10" maxlength="3"></meter>
+    
+
+    <div>
+      <br>
+      <!-- Submit Button -->
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+</body>
+
+</html>

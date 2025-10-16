@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Form</title>
+</head>
+<body>
+  <div class="formContainer">
+    <form id="simpleForm" oninput="pointValue.value = pointSlider.value">
+      <label for="quantity">Quantity between 1 to 5:</label>
+      <input type="number" id="quantity" name="quantity" min="1" max="5" required>
+
+      <div class="point">
+        <br>
+        <label for="pointSlider">Point (1–10):</label>
+        <input type="range" id="pointSlider" name="pointSlider" min="1" max="10" value="1">
+        <input type="text" id="pointValue" name="pointValue" value="1" readonly size="1" maxlength="2">
+      </div>
+
+      <div>
+        <br>
+        <input type="submit" value="Submit">
+      </div>
+    </form>
+  </div>
+</body>
+</html>

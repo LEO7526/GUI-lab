@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Form</title>
+  <script>
+    function({
+      $("#input_numer").click(function() {
+        var abc = $("#input_numer").val();
+        $("#meter1").animate({
+          value: abc
+        });
+      });
+
+    });
+  </script>
+</head>
+
+<body>
+  <div class="form-container">
+    <form id="simpleForm" oninput="output.value = '$' + income.value">
+
+      <h1 style="font-size: 40px;">Users Survey</h1>
+
+      <label for="name">Name:</label>
+      <input type="text" name="name" placeholder="Chan Tai Man" required>
+
+      <div>
+        <br>
+        <label for="date">Date of Purchase:</label>
+        <input type="date" id="dob" name="dob" required>
+      </div>
+
+
+
+      <div class="checkbox-option">
+        <br>
+        <input type="checkbox" id="member" name="membership" value="Member">
+        <label for="member">I'm a member</label>
+      </div>
+
+
+      <div>
+        <br>
+        <label for="product">What's your favorite products?</label>
+        <select name="product" id="product">
+          <option value="mobile" title="This is a description for Option 1">Mobile</option>
+          <option value="pc">PC</option>
+          <option value="notebook">Notebook</option>
+          <option value="tablet">Tablet</option>
+
+        </select>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+      </div>
+
+
+
+      <div>
+        <br>
+        <p>1
+          <input type="range" id="num" name="num" min="1" max="50" value="1">
+          <output id="output" class="num-value">50</output>
+        </p>
+        <div>
+          <br>
+          <label for="serviceScore">Your score on product:</label>
+          <br>
+        </div>
+        <div> <meter id="meter1" value="0" min="0" max="100" low="40" high="75" optimum="65"></meter></div>
+
+
+      </div>
+
+      <input type="number" id="serviceScore" min="0" max="100">
+      <br>
+
+      <div>
+        <br>
+        <label for="serviceScore">Your score on service:</label>
+        <br>
+        <meter id="meter2" value="0" min="0" max="100" low="40" high="75" optimum="65"></meter>
+      </div>
+
+      <br>
+
+      <br>
+      <!-- Submit Button -->
+      <input type="submit" value="Submit">
+      <input type="reset" value="Reset">
+    </form>
+  </div>
+
+
+</body>
+
+</html>
