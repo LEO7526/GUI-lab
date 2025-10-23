@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    div {
+      margin: 20px;
+      text-align: left;
+    }
+  </style>
+  <!-- Include jQuery from a CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
+  <script>
+    $(document).ready(function() {
+      function calculateTotal() {
+        var price = parseFloat($("#price").val()) || 0;
+        var quantity = parseFloat($("#quantity").val()) || 0;
+        var discount = parseFloat($("#discount").val()) || 0;
+
+        var total = price * quantity * (1 - discount / 100);
+        $("#amount").text(total);
+      }
+
+      // Trigger calculation whenever inputs change
+      $("#price, #quantity, #discount").on("input", calculateTotal);
+    });
+  </script>
+</head>
+<body>
+  <h3>Transaction Details</h3>
+
+  <div>
+    <label for="price">Price: $</label>
+    <input type="number" id="price" name="price">
+  </div>
+
+  <div>
+    <label for="quantity">Quantity: </label>
+    <input type="number" id="quantity" name="quantity">
+  </div>
+
+  <div>
+    <label for="discount">Discount: </label>
+    <input type="number" id="discount" name="discount"> %
+  </div>
+
+  <div>
+    <label for="total">Total Amount = $</label>
+    <span id="amount">0.00</span>
+  </div>
+</body>
+</html>
