@@ -1,103 +1,110 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Form</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // Animate meter1 when range slider changes
+        $("#num").on("input", function () {
+          var targetVal = $(this).val();
+          $({ val: $("#meter1").val() }).animate(
+            { val: targetVal },
+            {
+              duration: 500,
+              step: function (now) {
+                $("#meter1").val(now);
+              }
+            }
+          );
+        });
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Personal Form</title>
-  <script>
-    function({
-      $("#input_numer").click(function() {
-        var abc = $("#input_numer").val();
-        $("#meter1").animate({
-          value: abc
+        // Animate meter2 when number input changes
+        $("#serviceScore").on("input", function () {
+          var targetVal = $(this).val();
+          $({ val: $("#meter2").val() }).animate(
+            { val: targetVal },
+            {
+              duration: 500,
+              step: function (now) {
+                $("#meter2").val(now);
+              }
+            }
+          );
         });
       });
+    </script>
+  </head>
 
-    });
-  </script>
-</head>
+  <body>
+    <div class="form-container">
+      <form id="simpleForm">
+        <h1 style="font-size: 40px">Users Survey</h1>
 
-<body>
-  <div class="form-container">
-    <form id="simpleForm" oninput="output.value = '$' + income.value">
+        <label for="name">Name:</label>
+        <input type="text" name="name" placeholder="Chan Tai Man" required />
 
-      <h1 style="font-size: 40px;">Users Survey</h1>
-
-      <label for="name">Name:</label>
-      <input type="text" name="name" placeholder="Chan Tai Man" required>
-
-      <div>
-        <br>
-        <label for="date">Date of Purchase:</label>
-        <input type="date" id="dob" name="dob" required>
-      </div>
-
-
-
-      <div class="checkbox-option">
-        <br>
-        <input type="checkbox" id="member" name="membership" value="Member">
-        <label for="member">I'm a member</label>
-      </div>
-
-
-      <div>
-        <br>
-        <label for="product">What's your favorite products?</label>
-        <select name="product" id="product">
-          <option value="mobile" title="This is a description for Option 1">Mobile</option>
-          <option value="pc">PC</option>
-          <option value="notebook">Notebook</option>
-          <option value="tablet">Tablet</option>
-
-        </select>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-      </div>
-
-
-
-      <div>
-        <br>
-        <p>1
-          <input type="range" id="num" name="num" min="1" max="50" value="1">
-          <output id="output" class="num-value">50</output>
-        </p>
         <div>
-          <br>
-          <label for="serviceScore">Your score on product:</label>
-          <br>
+          <br />
+          <label for="date">Date of Purchase:</label>
+          <input type="date" id="dob" name="dob" required />
         </div>
-        <div> <meter id="meter1" value="0" min="0" max="100" low="40" high="75" optimum="65"></meter></div>
 
+        <div class="checkbox-option">
+          <br />
+          <input type="checkbox" id="member" name="membership" value="Member" />
+          <label for="member">I'm a member</label>
+        </div>
 
-      </div>
+        <div>
+          <br />
+          <label for="product">What's your favourite products?</label>
+          <select name="product" id="product">
+            <optgroup label="Mobile">
+              <option value="mobile-phone">Mobile Phone</option>
+            </optgroup>
+            <optgroup label="PC">
+              <option value="desktop">Desktop (PC)</option>
+              <option value="notebook">Notebook</option>
+              <option value="tablet">Tablet</option>
+            </optgroup>
+          </select>
+        </div>
 
-      <input type="number" id="serviceScore" min="0" max="100">
-      <br>
+        <div>
+          <br />
+          <p>
+            1
+            <input type="range" id="num" name="num" min="1" max="50" value="1" />
+            <output id="output" class="num-value">1</output>
+          </p>
+          <div>
+            <br />
+            <label for="num">Your score on product:</label>
+            <br />
+          </div>
+          <div>
+            <meter id="meter1" value="0" min="0" max="50"></meter>
+          </div>
+        </div>
 
-      <div>
-        <br>
-        <label for="serviceScore">Your score on service:</label>
-        <br>
-        <meter id="meter2" value="0" min="0" max="100" low="40" high="75" optimum="65"></meter>
-      </div>
+        <br />
+        <input type="number" id="serviceScore" min="0" max="100" />
+        <br />
 
-      <br>
+        <div>
+          <br />
+          <label for="serviceScore">Your score on service:</label>
+          <br />
+          <meter id="meter2" value="0" min="0" max="100" low="40" high="75" optimum="65"></meter>
+        </div>
 
-      <br>
-      <!-- Submit Button -->
-      <input type="submit" value="Submit">
-      <input type="reset" value="Reset">
-    </form>
-  </div>
-
-
-</body>
-
+        <br />
+        <input type="submit" value="Submit" />
+        <input type="reset" value="Reset" />
+      </form>
+    </div>
+  </body>
 </html>
