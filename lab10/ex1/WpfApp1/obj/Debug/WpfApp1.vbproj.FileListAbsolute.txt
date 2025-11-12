@@ -1,0 +1,17 @@
+C:\Users\240434797\Downloads\lab10\WpfApp1\WpfApp1\bin\Debug\WpfApp1.exe.config
+C:\Users\240434797\Downloads\lab10\WpfApp1\WpfApp1\bin\Debug\WpfApp1.exe
+C:\Users\240434797\Downloads\lab10\WpfApp1\WpfApp1\bin\Debug\WpfApp1.pdb
+C:\Users\240434797\Downloads\lab10\WpfApp1\WpfApp1\bin\Debug\WpfApp1.xml
+C:\Users\240434797\Downloads\lab10\WpfApp1\WpfApp1\obj\Debug\WpfApp1.vbproj.AssemblyReference.cache
+C:\Users\240434797\Downloads\lab10\WpfApp1\WpfApp1\obj\Debug\MainWindow.baml
+C:\Users\240434797\Downloads\lab10\WpfApp1\WpfApp1\obj\Debug\MainWindow.g.vb
+C:\Users\240434797\Downloads\lab10\WpfApp1\WpfApp1\obj\Debug\Application.g.vb
+C:\Users\240434797\Downloads\lab10\WpfApp1\WpfApp1\obj\Debug\WpfApp1_MarkupCompile.cache
+C:\Users\240434797\Downloads\lab10\WpfApp1\WpfApp1\obj\Debug\WpfApp1.g.resources
+C:\Users\240434797\Downloads\lab10\WpfApp1\WpfApp1\obj\Debug\WpfApp1.Resources.resources
+C:\Users\240434797\Downloads\lab10\WpfApp1\WpfApp1\obj\Debug\WpfApp1.vbproj.GenerateResource.cache
+C:\Users\240434797\Downloads\lab10\WpfApp1\WpfApp1\obj\Debug\WpfApp1.vbproj.CoreCompileInputs.cache
+C:\Users\240434797\Downloads\lab10\WpfApp1\WpfApp1\obj\Debug\WpfApp1.exe
+C:\Users\240434797\Downloads\lab10\WpfApp1\WpfApp1\obj\Debug\WpfApp1.xml
+C:\Users\240434797\Downloads\lab10\WpfApp1\WpfApp1\obj\Debug\WpfApp1.pdb
+C:\Users\240434797\Downloads\lab10\WpfApp1\WpfApp1\obj\Debug\WpfApp1.exe.config

@@ -1,0 +1,29 @@
+﻿<Window x:Class="MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Grid Layout" Height="300" Width="300">
+    <Grid>
+        <!-- Define 3 rows -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Define 3 columns -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Buttons arranged in grid -->
+        <Button Grid.Row="0" Grid.Column="0" Grid.RowSpan="2">A</Button>
+        <Button Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2">B</Button>
+        <Button Grid.Row="1" Grid.Column="1">C</Button>
+        <Button Grid.Row="1" Grid.Column="2">D</Button>
+        <Button Grid.Row="2" Grid.Column="0">E</Button>
+        <Button Grid.Row="2" Grid.Column="1">F</Button>
+        <Button Grid.Row="2" Grid.Column="2">G</Button>
+    </Grid>
+</Window>

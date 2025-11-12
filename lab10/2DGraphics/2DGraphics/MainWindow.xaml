@@ -1,0 +1,55 @@
+﻿<Window x:Class="MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="2D Shapes" Height="400" Width="500">
+
+    <Canvas Height="300" Width="450" Margin="0, 0, 100, 0">
+
+        <!-- First diagonal line -->
+        <Line X1="20" Y1="20" X2="80" Y2="80"
+          Stroke="Red" StrokeThickness="5" />
+
+        <!-- Green line starting from bottom-right of red line -->
+        <Line X1="90" Y1="70" X2="190" Y2="70"
+      Stroke="Green" StrokeThickness="5" />
+
+        <!-- Ellipse -->
+        <Ellipse Fill="Orange" Height="100" Width="200"
+             Canvas.Left="250" StrokeThickness="3" Stroke="Red" />
+
+        <Rectangle Fill="LightBlue" Width="100" Height="50"
+           Canvas.Left="60" Canvas.Top="210"
+           Stroke="Black" StrokeThickness="2"
+           Name="ClickableRectangle"
+           MouseLeftButtonDown="Rectangle_Click" />
+
+        <!-- Curved path -->
+        <Path Stroke="Black" StrokeThickness="3"
+      Data="M 75,120 C 200,50 300,75 350,180" />
+
+        <!-- Triangle -->
+        <Polygon Fill="Green" Stroke="Red" StrokeThickness="3"
+         Points="350,200 300,280 400,280" />
+
+
+
+        <Polygon Fill="Orange"
+                 Stroke="Blue"
+                 StrokeThickness="5"
+                 Points="150,100 200,100 200,150 250,150 250,200 150,200" />
+
+        <Polygon Fill="Red" Stroke="Black" StrokeThickness="5"
+         Points="250,100 250,150 200,100">
+            <Polygon.RenderTransform>
+                <!-- Rotate 45 degrees around the point (250,100) -->
+                <RotateTransform Angle="180" CenterX="225" CenterY="125"/>
+            </Polygon.RenderTransform>
+        </Polygon>
+
+
+
+
+
+    </Canvas>
+
+</Window>
