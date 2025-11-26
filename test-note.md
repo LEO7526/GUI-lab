@@ -84,6 +84,8 @@ $("#input1 input").keyup(function() {
             }
         });
     } else {
+        // Reset heading and show all items if input is empty
+        $("#div3 h3").text("Module Codes");
         $("#div3 ol li").show();
     }
 });
@@ -779,37 +781,31 @@ $(document).ready(function() {
 ```
 
 ### Sync slider with number input + datalist (vanilla JS)
+Note: This example uses vanilla JS as shown in lab8_3.html. For jQuery version, see the BMI calculator above.
 ```javascript
-window.onload = function() {
-    const price = document.getElementById("price");
-    const quantity = document.getElementById("quantity");
-    const slider = document.getElementById("slider");
-    const delivery = document.getElementById("delivery");
-    const total = document.getElementById("total");
-
+$(document).ready(function() {
     function calculateTotal() {
-        const p = parseFloat(price.value) || 0;
-        const q = parseFloat(quantity.value) || 0;
-        const d = parseFloat(delivery.value) || 0;
-        total.value = (p * q + d).toFixed(2);
+        const p = parseFloat($("#price").val()) || 0;
+        const q = parseFloat($("#quantity").val()) || 0;
+        const d = parseFloat($("#delivery").val()) || 0;
+        $("#total").val((p * q + d).toFixed(2));
     }
 
     // Sync slider and number box
-    slider.addEventListener("input", () => {
-        quantity.value = slider.value;
+    $("#slider").on("input", function() {
+        $("#quantity").val($(this).val());
         calculateTotal();
     });
 
-    quantity.addEventListener("input", () => {
-        slider.value = quantity.value;
+    $("#quantity").on("input", function() {
+        $("#slider").val($(this).val());
         calculateTotal();
     });
 
-    price.addEventListener("input", calculateTotal);
-    delivery.addEventListener("input", calculateTotal);
+    $("#price, #delivery").on("input", calculateTotal);
 
     calculateTotal();
-};
+});
 ```
 
 ### Datalist HTML
