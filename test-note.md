@@ -780,8 +780,7 @@ $(document).ready(function() {
 });
 ```
 
-### Sync slider with number input + datalist (vanilla JS)
-Note: This example uses vanilla JS as shown in lab8_3.html. For jQuery version, see the BMI calculator above.
+### Sync slider with number input + datalist (jQuery)
 ```javascript
 $(document).ready(function() {
     function calculateTotal() {
