@@ -1,0 +1,114 @@
+<html>
+<head>
+	<title>Lab 1 Preparation</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script>
+		
+			
+			
+	</script>
+</head>
+
+<style>
+	table, td, tr, th {
+		border: 2px solid black;
+		font-size: 120%;
+		border-collapse: collapse; /* Prevents double borders */
+	}
+	th {
+		color: black;
+		font-weight:bold;
+	}
+	td, th {
+		padding: 10px; /* Adds space inside each cell */
+		background-color: rgb(224,224,224)
+	}
+	button{
+		width:300px;
+		height: 40px;
+		font-size: 22px;
+	}
+
+	h1{
+	color: #E0E0E0;
+	padding: 25px;
+	background-color:rgb(50,100,80);}
+	
+	p{//color: rgb(0,0,255);
+		font-size:18;
+		font-weight:bold;}
+		
+	h2{margin-left: 25px;}
+	#div1{margin-left: 45px;
+		padding: 20px;
+		background-color: #ed6a5a;
+		//background-color: pink;
+		margin-bottom: 10px;
+	}
+	#div2{margin-left: 45px;
+		padding: 20px;
+		background-color: #f4f1bb;
+		//background-color: lightgreen;
+		margin-bottom: 10px;
+	}
+	
+	#div3{margin-left: 45px;
+		padding: 20px;
+		background-color: #9bc1bc;
+		//background-color: lightblue;
+		margin-bottom:10px;
+		
+	}
+	
+	/*
+	body :not(h1) {
+		margin-left: 20px; /* Adjust the indent amount */
+	}
+	*/
+	
+	#input1 {font-weight: bold;}
+
+
+	
+</style>
+
+<body>
+	<h1>Lab 1 preparation</h1>
+	<h2 class = "myclass">More examples about selectors in jQuery</h2>
+	
+	
+	<div id="div1">
+	<p class = "myclass">First paragraph</p>
+	<p id="myid">Second paragraph</p>
+	<p class = "myclass">Third paragraph</p>
+	<button id="button1">Click to hide everything</button>
+	<button id="button2">Click to hide this button</button>
+	<button id="button3">Click to hide the same class</button>
+	<button id="button4">click to hide dblclick to show </button>
+	<p></p>
+	</div>
+		
+	<div id="div2">
+		<table style = "text-align:left;">
+		<!-- Removed margin: 0 auto to left-align the table -->
+			<tr><th>Course Name</th><th>Course Code</th></tr>
+			<tr><td>HDTN</td><td>HT114103</td></tr>
+			<tr><td>HDSE</td><td>HT114105</td></tr>
+			<tr><td>HDGSD</td><td>HT114107</td></tr>
+		</table>
+	</div>
+	
+	<div id = "div3">
+	<h3>Module Codes</h3>
+	<ol>
+		<li>ITP4506</li>
+		<li>ITP4507</li>
+		<li>ITP4508</li>
+		<li>ITP4509</li>
+	</ol>
+	
+	<p id="input1"> Input Moudle Codes: <input type ="text" placeholder = "Enter module code here"></p>
+	
+	</div>
+</body>
+</html>
