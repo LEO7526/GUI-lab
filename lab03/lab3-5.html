@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+    <title>Device Selector with Shopping Cart</title>
+    <style>
+        #deviceList, #shoppingCart {
+            padding: 10px;
+            min-height: 100px;
+            width: 200px;
+            font-weight: bold;
+            border: 1px solid black;
+        }
+        #deviceList {
+            background-color: green;
+            color: white;
+        }
+        #shoppingCart {
+            background-color: yellow;
+            color: black;
+            margin-top: 10px;
+        }
+        button {
+            margin: 5px;
+        }
+        .center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 30px;
+        }
+        .center2 {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-top: 10px;
+            margin-left: 30px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="center2">
+        <button id="appendLast">Product append to Last</button>
+        <select id="product">
+            <option value="white">Choose product</option>
+            <option value="Desktop">Desktop</option>
+            <option value="Notebook">Notebook</option>
+            <option value="iPad">iPad</option>
+            <option value="iPhone">iPhone</option>
+            <option value="Tablet">Tablet</option>
+        </select>
+        <button id="appendTop">Product append to Top</button>
+        <button id="clearAll">Clear All</button>
+        <button id="putToCart">Put to Shopping Cart</button>
+    </div>
+
+    <div class="center">
+        <p>Append Product Below:</p>
+        <div id="deviceList"></div><br/>
+        <p>Shopping Cart:</p>
+        <div id="shoppingCart"></div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $("#appendLast").click(function () {
+                let selected = $("#product").val();
+                if (selected !== "white") {
+                    $("#deviceList").append("<div>" + selected + "</div>");
+                }
+            });
+
+            $("#appendTop").click(function () {
+                let selected = $("#product").val();
+                if (selected !== "white") {
+                    $("#deviceList").prepend("<div>" + selected + "</div>");
+                }
+            });
+
+            $("#clearAll").click(function () {
+                $("#deviceList").empty();
+                $("#shoppingCart").empty();
+                $("#product").val("white");
+            });
+
+            $("#putToCart").click(function () {
+                let items = $("#deviceList").children().clone();
+                $("#shoppingCart").append(items);
+                $("#deviceList").empty();
+            });
+        });
+    </script>
+</body>
+</html>

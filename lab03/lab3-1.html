@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>jQuery children and siblings demo</title>
+   <style>
+      .selected_red { color:red; }
+      .selected_blue { color:blue; }
+   </style>
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<div>
+   <ul class="red">
+     <li>list item 1</li>
+     <li>list item 2</li>
+     <li>list item 3</li>
+   </ul>
+   <ul class="blue">
+     <li>list item 4</li>
+     <li>list item 5</li>
+     <li>list item 6</li>
+   </ul>
+</div>
+
+<script>
+$(document).ready(function(){
+   // Turn list item 1–3 red using children()
+   $("ul.red").children("li").addClass("selected_red");
+
+   // Turn list item 4–6 blue using siblings()
+   $("ul.red").siblings("ul.blue").children("li").addClass("selected_blue");
+});
+</script>
+</body>
+</html>

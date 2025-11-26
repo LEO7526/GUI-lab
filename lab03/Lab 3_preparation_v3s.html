@@ -6,7 +6,50 @@
   <title>Lab 3 Preparation</title>
   <script>
     $(document).ready(function() {
-     
+      // 1. Add 'selected' to h1
+      $("#btn1").click(function() {
+        $("h1").addClass("selected");
+      });
+
+      // 2. Color div children red
+      $("#btn2").click(function() {
+        $("#div1, #div2").children().css("color", "red");
+      });
+
+      // 3. Add 'selected' to List item 3
+      $("#btn3").click(function() {
+        $("li:contains('List item 3')").addClass("selected");
+      });
+
+      // 4. Add 'selected' to all spans in ul
+      $("#btn4").click(function() {
+        $("ul span").addClass("selected");
+      });
+
+      // 5. Add 'selected' to all children of p
+      $("#btn5").click(function() {
+        $("p").children().addClass("selected");
+      });
+
+      // 6. Add 'selected' to parents of spans
+      $("#btn6").click(function() {
+        $("span").parent().addClass("selected");
+      });
+
+      // 7. Add 'selected' to siblings of p
+      $("#btn7").click(function() {
+        $("p").siblings().addClass("selected");
+      });
+
+      // 8. Add 'selected' to previous of #target
+      $("#btn8").click(function() {
+        $("#target").prev().addClass("selected");
+      });
+
+      // 9. Bold previous of .c2
+      $("#btn9").click(function() {
+        $(".c2").prev().css("font-weight", "bold");
+      });
     });
   </script>
   <style>
