@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery Interaction Demo</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    #clickBtn {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+    #inputBox {
+      margin-left: 10px;
+      padding: 8px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="clickBtn">Click</button>
+  <input type="text" id="inputBox" placeholder="Input here" />
+
+  <script>
+    $(document).ready(function () {
+      // 1) Button click changes background to red
+      $('#clickBtn').click(function () {
+        $(this).css('background-color', 'red');
+      });
+
+      // 2) Textbox focus changes background to green
+      $('#inputBox').focus(function () {
+        $(this).css('background-color', 'green');
+      });
+
+      // 3) Textbox content change changes background to red
+      $('#inputBox').on('input', function () {
+        $(this).css('background-color', 'red');
+      });
+
+      // 4) Textbox blur (out of focus) changes background to blue
+      $('#inputBox').blur(function () {
+        $(this).css('background-color', 'blue');
+      });
+    });
+  </script>
+
+</body>
+</html>

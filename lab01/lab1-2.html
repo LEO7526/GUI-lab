@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>The jQuery</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                // Button 1: Click → Welcome message
+                $("#button1").on("click", function () {
+                    alert("Welcome!");
+                });
+
+                // Button 2: Double click → Good-bye message
+                $("#button2").on("dblclick", function () {
+                    alert("Good-bye!");
+                });
+
+                // Button 3: Mouse enter → hide; Mouse leave → show
+                $("#button3").on("mouseenter", function () {
+                    $(this).hide();
+                });
+
+                $("#button3").on("mouseleave", function () {
+                    $(this).show();
+                });
+
+                // Input fields: Focus → green; Blur → red
+                $("#input1, #input2").on("focus", function () {
+                    $(this).css("background-color", "green");
+                });
+
+                $("#input1, #input2").on("blur", function () {
+                    $(this).css("background-color", "red");
+                });
+            });
+        </script>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                padding: 20px;
+            }
+            button {
+                margin-right: 10px;
+                padding: 8px 16px;
+            }
+            input {
+                margin: 10px;
+                padding: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="button1">Button 1</button>
+        <button id="button2">Button 2</button>
+        <button id="button3">Button 3</button>
+
+        <p>Input 1: <input id="input1" /></p>
+        <div>Input 2: <input id="input2" /></div>
+    </body>
+</html>
