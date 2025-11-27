@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Table Filter</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<input type="text" id="filter" placeholder="Type to filter rows...">
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>City</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>John Doe</td><td>New York</td></tr>
+    <tr><td>Jane Smith</td><td>London</td></tr>
+    <tr><td>Michael Chan</td><td>Hong Kong</td></tr>
+    <tr><td>Alice Wong</td><td>Toronto</td></tr>
+  </tbody>
+</table>
+
+<script>
+$("#filter").on("keyup", function() {
+    var phrase = $(this).val().toLowerCase();
+
+    $("table tbody tr").each(function() {
+        var rowText = $(this).text().toLowerCase();
+        var match = rowText.includes(phrase);
+
+        // Show row if it matches, hide if not
+        $(this).toggle(match);
+    });
+});
+</script>
+
+</body>
+</html>
